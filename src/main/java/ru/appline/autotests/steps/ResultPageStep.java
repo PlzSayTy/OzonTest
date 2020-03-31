@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class ResultPageStep {
     ResultPage resultPage = new ResultPage();
-
+    //Не успел сделать нормальные ожидалки, поэтому в некоторых моментах оставил слип
     @When("^заполняются поля ввода$")
     public void fullFill(DataTable dataTable) {
         Map<String, String> dataMap = dataTable.asMap(String.class, String.class);
@@ -22,6 +22,9 @@ public class ResultPageStep {
         resultPage.pressCheckBox(checkBoxName);
     }
 
+//    С добавлением в корзину были некоторые трудности.
+//    Я перебираю каждый четный товар, добавляю его в корзину и запоминаю название+цену в Map
+//    Но это не всегда работает, и я ещё не разобрался почему
     @When("^добавить в корзину$")
     public void addIntoBucket(DataTable dataTable) {
         Map<String, String> dataMap = dataTable.asMap(String.class, String.class);

@@ -33,8 +33,8 @@ public class BasketPage extends BasePage {
     }
 
     public void removeItems(String name) throws Exception {
-        jsClick(name);
-        jsClick(removeButton);
+        clickToRemove(name);
+        clickToRemove(removeButton);
     }
 
     @Override

@@ -2,7 +2,6 @@ package ru.appline.autotests.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -122,7 +121,7 @@ public class ResultPage extends BasePage {
     public void selectBrands(String name) {
         try {
             builder.moveToElement((driver.findElement(By.xpath("//span[contains(text(), 'Посмотреть все')]")))).perform();
-            jsClick(driver.findElement(By.xpath("//span[contains(text(), 'Посмотреть все')]")));
+            clickToRemove(driver.findElement(By.xpath("//span[contains(text(), 'Посмотреть все')]")));
             Thread.sleep(2000);
         } catch (Exception e) {
 

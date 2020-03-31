@@ -27,11 +27,13 @@ public class BasketPageStep {
         basketPage.assertProducts();
     }
 
+    //
+    //Тут использую рефлексию
     @When("^выполнено нажатие на кнопку \"(.+)\"$")
     public void удалениеТоваров(String name) throws Exception {
         basketPage.removeItems(name);
     }
-
+    //Тут пытаюсь приатачить мапу с покупками
     @When("^Показать купленные$")
     public void showBought() {
         show();

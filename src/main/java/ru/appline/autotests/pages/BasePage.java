@@ -15,8 +15,6 @@ import ru.appline.autotests.steps.BaseSteps;
 import java.lang.reflect.Field;
 import java.util.*;
 
-import static ru.appline.autotests.pages.ResultPage.map;
-
 public abstract class BasePage {
     WebDriver driver;
     Actions builder;
@@ -85,15 +83,15 @@ public abstract class BasePage {
         return null;
     }
 
-    public void jsClick(WebElement element) {
+    public void clickToRemove(WebElement element) {
         builder.moveToElement(element).perform();
         executor.executeScript("arguments[0].click();", element);
     }
 
-    public void jsClick(String name) throws Exception {
+    public void clickToRemove(String name) throws Exception {
         Thread.sleep(1000);
         WebElement element = getField(name);
-        jsClick(element);
+        clickToRemove(element);
     }
 
     public abstract WebElement getField(String name) throws Exception;
